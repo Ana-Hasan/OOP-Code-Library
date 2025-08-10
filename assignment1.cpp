@@ -26,6 +26,36 @@ struct Student {
     }
 };
 
+class Complex {
+private:
+    float real, imag;
+
+public:
+    void set() {
+        cout << "Enter real part: "; cin >> real;
+        cout << "Enter imaginary part: "; cin >> imag;
+    }
+    void display() {
+        cout << real << " + " << imag << "i" << endl;
+    }
+    Complex sum(Complex c) {
+        Complex result;
+        result.real = real + c.real;
+        result.imag = imag + c.imag;
+        return result;
+    }
+};
+
+namespace first {
+    int x = 10;
+    void show() { cout << "First namespace x = " << x << endl; }
+}
+
+namespace second {
+    int x = 20;
+    void show() { cout << "Second namespace x = " << x << endl; }
+}
+
 // question1
 int main(){
     // question1
@@ -78,7 +108,17 @@ int main(){
      Student s;
     s.addDetails();
     s.displayDetails();
+//question 7
+Complex c1, c2, c3;
+    c1.set();
+    c2.set();
+    c3 = c1.sum(c2);
+    cout << "Sum: ";
+    c3.display();
 
+    //question 8
+    first::show();
+    second::show();
 
     return 0;
 }
