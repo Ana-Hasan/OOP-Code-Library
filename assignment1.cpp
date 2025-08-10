@@ -1,5 +1,30 @@
 #include <iostream>
+#include <string>
 using namespace std;
+
+struct Student {
+    string name, degree, hostel;
+    int rollNo;
+    float currentCGPA;
+
+    void addDetails() {
+        cout << "Enter Name: "; cin >> name;
+        cout << "Enter Roll No: "; cin >> rollNo;
+        cout << "Enter Degree: "; cin >> degree;
+        cout << "Enter Hostel: "; cin >> hostel;
+        cout << "Enter CGPA: "; cin >> currentCGPA;
+    }
+    void updateDetails() { addDetails(); }
+    void updateCGPA() { cout << "Enter new CGPA: "; cin >> currentCGPA; }
+    void updateHostel() { cout << "Enter new Hostel: "; cin >> hostel; }
+    void displayDetails() {
+        cout << "\nName: " << name
+             << "\nRoll No: " << rollNo
+             << "\nDegree: " << degree
+             << "\nHostel: " << hostel
+             << "\nCGPA: " << currentCGPA << endl;
+    }
+};
 
 // question1
 int main(){
@@ -48,6 +73,12 @@ int main(){
         cout << i << " ";
         i++;
     } while (i < 5);
+
+    //question4
+     Student s;
+    s.addDetails();
+    s.displayDetails();
+
 
     return 0;
 }
